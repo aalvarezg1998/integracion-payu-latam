@@ -6,17 +6,6 @@
     <title>Document</title>
 </head>
 <body>
-    <form>
-        <script
-          src="https://checkout.wompi.co/widget.js"
-          data-render="button"
-          data-public-key="pub_test_kb2JmGNX8Zi70W24PWoG9YOqGX3YfQ0f"
-          data-currency="COP"
-          data-amount-in-cents="9500000"
-          data-reference="m2tbr2nn-ocs5bphkhnmazk1m990qep"
-          data-signature:integrity="2c67b71c5685f928e3d3e7f737275e84d0c12c21b00b927ee91fee09dd52be1a"
-        ></script>
-    </form>
     <form id="paymentForm" action="https://checkout.wompi.co/p/" method="GET">
         <input type="hidden" id="public-key" name="public-key" value="" />
         <input type="hidden" id="currency" name="currency" value="" />
@@ -26,7 +15,7 @@
         <button type="submit">Pagar con Wompi</button>
      </form>
      
-<!--      <script>
+     <script>
         window.addEventListener("message", function(event) {
            document.getElementById("public-key").value = "pub_test_kb2JmGNX8Zi70W24PWoG9YOqGX3YfQ0f";
            document.getElementById("currency").value = "COP";
@@ -35,6 +24,6 @@
            document.getElementById("signature").value = "fcca9cbd67ee6ae10f375055fb3f056d08a9c0648c05973f3fa814be38e9b37d";
            document.getElementById("paymentForm").submit();
         });
-     </script> -->
+     </script> 
 </body> 
 </html>
