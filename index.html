@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Pagos Wompi Adriana Rueda Taller de Reposteria</title>
 </head>
 <body>
     <form id="paymentForm" action="https://checkout.wompi.co/p/" method="GET">
@@ -12,16 +12,26 @@
         <input type="hidden" id="amount-in-cents" name="amount-in-cents" value="" />
         <input type="hidden" id="reference" name="reference" value="" />
         <input type="hidden" id="signature" name="signature:integrity" value="" />
-        <button type="submit">Pagar con Wompi</button>
+        <input type="hidden" id="redirect-url" name="redirect-url" value="" />
      </form>
      
      <script>
+        const URL_REDIRECCION = "https://www.adrianaruedatallerdereposteria.com/account/challenge";
+        
+        const urlParams = new URLSearchParams(window.location.search);
+        const publicKey = urlParams.get('public-key');
+        const currency = urlParams.get('currency');
+        const amount = urlParams.get('amount');
+        const reference = urlParams.get('reference');
+        const signature = urlParams.get('signature');
+           
         window.addEventListener("message", function(event) {
-           document.getElementById("public-key").value = "pub_test_kb2JmGNX8Zi70W24PWoG9YOqGX3YfQ0f";
-           document.getElementById("currency").value = "COP";
-           document.getElementById("amount-in-cents").value = 9500000;
-           document.getElementById("reference").value = "m2oo6fbx-lhpdnlprmbiuuxu4jprz8k";
-           document.getElementById("signature").value = "fcca9cbd67ee6ae10f375055fb3f056d08a9c0648c05973f3fa814be38e9b37d";
+           document.getElementById("public-key").value = publicKey;
+           document.getElementById("currency").value = currency;
+           document.getElementById("amount-in-cents").value = amount;
+           document.getElementById("reference").value = reference;
+           document.getElementById("signature").value = signature;
+           document.getElementById("redirect-url").value = URL_REDIRECCION;
            document.getElementById("paymentForm").submit();
         });
      </script> 
