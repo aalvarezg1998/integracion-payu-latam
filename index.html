@@ -25,6 +25,7 @@
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             const urlParams = new URLSearchParams(window.location.search);
+            localStorage.setItem('url', urlParams);
 
             const merchantId = urlParams.get('merchantId');
             const accountId = urlParams.get('accountId');
